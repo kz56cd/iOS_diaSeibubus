@@ -38,7 +38,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
             return toStationVC
         } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
-            return fromStationVC
+            return nil
         }
         return nil
     }
@@ -47,7 +47,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
             return toStationVC
         } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
-            return fromStationVC
+            return nil
         }
         return nil
     }
