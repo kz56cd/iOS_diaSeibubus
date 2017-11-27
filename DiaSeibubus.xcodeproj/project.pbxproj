@@ -83,7 +83,6 @@
 		EAE5CB871FCBBDFA005C9CE8 = {
 			isa = PBXGroup;
 			children = (
-				EAE5CBC91FCBE529005C9CE8 /* busstops.json */,
 				EAE5CB921FCBBDFA005C9CE8 /* DiaSeibubus */,
 				EAE5CBA71FCBBDFA005C9CE8 /* DiaSeibubusTests */,
 				EAE5CBB21FCBBDFA005C9CE8 /* DiaSeibubusUITests */,
@@ -104,14 +103,9 @@
 		EAE5CB921FCBBDFA005C9CE8 /* DiaSeibubus */ = {
 			isa = PBXGroup;
 			children = (
-				EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */,
-				EAE5CB971FCBBDFA005C9CE8 /* Main.storyboard */,
-				EAE5CB9A1FCBBDFA005C9CE8 /* Assets.xcassets */,
-				EAE5CB9C1FCBBDFA005C9CE8 /* LaunchScreen.storyboard */,
-				EAE5CB9F1FCBBDFA005C9CE8 /* Info.plist */,
-				EAE5CBC11FCBC263005C9CE8 /* FromStationViewController.swift */,
-				EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */,
-				EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */,
+				EAE5CBD61FCBEA30005C9CE8 /* Application */,
+				EAE5CBD51FCBEA26005C9CE8 /* UI */,
+				EAE5CBD71FCBEA30005C9CE8 /* Constants */,
 			);
 			path = DiaSeibubus;
 			sourceTree = "<group>";
@@ -132,6 +126,36 @@
 				EAE5CBB51FCBBDFA005C9CE8 /* Info.plist */,
 			);
 			path = DiaSeibubusUITests;
+			sourceTree = "<group>";
+		};
+		EAE5CBD51FCBEA26005C9CE8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5CB971FCBBDFA005C9CE8 /* Main.storyboard */,
+				EAE5CBC11FCBC263005C9CE8 /* FromStationViewController.swift */,
+				EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */,
+				EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EAE5CBD61FCBEA30005C9CE8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */,
+				EAE5CB9A1FCBBDFA005C9CE8 /* Assets.xcassets */,
+				EAE5CB9C1FCBBDFA005C9CE8 /* LaunchScreen.storyboard */,
+				EAE5CB9F1FCBBDFA005C9CE8 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EAE5CBD71FCBEA30005C9CE8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5CBC91FCBE529005C9CE8 /* busstops.json */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
-				INFOPLIST_FILE = DiaSeibubus/Info.plist;
+				INFOPLIST_FILE = DiaSeibubus/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kz56cd.DiaSeibubus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,7 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
-				INFOPLIST_FILE = DiaSeibubus/Info.plist;
+				INFOPLIST_FILE = DiaSeibubus/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kz56cd.DiaSeibubus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
