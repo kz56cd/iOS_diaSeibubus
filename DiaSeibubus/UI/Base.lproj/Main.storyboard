@@ -25,13 +25,32 @@
                     <view key="view" contentMode="scaleToFill" id="AXI-SA-uwa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eG2-fR-hCL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" red="0.99574802159999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eG2-fR-hCL" firstAttribute="trailing" secondItem="vlN-fJ-2bn" secondAttribute="trailing" id="0ME-YU-Dte"/>
+                            <constraint firstItem="eG2-fR-hCL" firstAttribute="top" secondItem="AXI-SA-uwa" secondAttribute="top" id="AgC-vi-LG2"/>
+                            <constraint firstItem="eG2-fR-hCL" firstAttribute="bottom" secondItem="vlN-fJ-2bn" secondAttribute="bottom" id="Bux-wv-9eO"/>
+                            <constraint firstItem="eG2-fR-hCL" firstAttribute="leading" secondItem="vlN-fJ-2bn" secondAttribute="leading" id="WEY-hg-Sf1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vlN-fJ-2bn"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="eG2-fR-hCL" id="xGP-dE-hgf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55m-Bc-IGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="896"/>
+            <point key="canvasLocation" x="-388" y="895.50224887556226"/>
         </scene>
         <!--To Station View Controller-->
         <scene sceneID="I8E-CC-MzN">
@@ -40,13 +59,32 @@
                     <view key="view" contentMode="scaleToFill" id="UqH-o6-A0l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjH-4s-Pid">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tjH-4s-Pid" firstAttribute="top" secondItem="UqH-o6-A0l" secondAttribute="top" id="0rO-Vd-5Ab"/>
+                            <constraint firstItem="974-KR-35H" firstAttribute="bottom" secondItem="tjH-4s-Pid" secondAttribute="bottom" id="37a-li-FDp"/>
+                            <constraint firstItem="tjH-4s-Pid" firstAttribute="leading" secondItem="974-KR-35H" secondAttribute="leading" id="CYk-7s-Raj"/>
+                            <constraint firstItem="974-KR-35H" firstAttribute="trailing" secondItem="tjH-4s-Pid" secondAttribute="trailing" id="jyN-GC-ing"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="974-KR-35H"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="tjH-4s-Pid" id="MQH-DL-60s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOm-FD-285" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="896"/>
+            <point key="canvasLocation" x="356" y="895.50224887556226"/>
         </scene>
     </scenes>
 </document>
