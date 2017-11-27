@@ -17,6 +17,7 @@
 		EAE5CBC41FCBC278005C9CE8 /* ToStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */; };
 		EAE5CBC81FCBC3F0005C9CE8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */; };
 		EAE5CBCA1FCBE529005C9CE8 /* busstops.json in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CBC91FCBE529005C9CE8 /* busstops.json */; };
+		EAE5CBDA1FCC259A005C9CE8 /* BusstopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBD91FCC259A005C9CE8 /* BusstopInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewController.swift; sourceTree = "<group>"; };
 		EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		EAE5CBC91FCBE529005C9CE8 /* busstops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = busstops.json; sourceTree = "<group>"; };
+		EAE5CBD91FCC259A005C9CE8 /* BusstopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusstopInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				EAE5CBD61FCBEA30005C9CE8 /* Application */,
+				EAE5CBD81FCC2576005C9CE8 /* Compornants */,
 				EAE5CBD51FCBEA26005C9CE8 /* UI */,
 				EAE5CBD71FCBEA30005C9CE8 /* Constants */,
 			);
@@ -156,6 +159,14 @@
 				EAE5CBC91FCBE529005C9CE8 /* busstops.json */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		EAE5CBD81FCC2576005C9CE8 /* Compornants */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5CBD91FCC259A005C9CE8 /* BusstopInfo.swift */,
+			);
+			path = Compornants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE5CBC41FCBC278005C9CE8 /* ToStationViewController.swift in Sources */,
+				EAE5CBDA1FCC259A005C9CE8 /* BusstopInfo.swift in Sources */,
 				EAE5CBC81FCBC3F0005C9CE8 /* PageViewController.swift in Sources */,
 				EAE5CBC21FCBC263005C9CE8 /* FromStationViewController.swift in Sources */,
 				EAE5CB941FCBBDFA005C9CE8 /* AppDelegate.swift in Sources */,

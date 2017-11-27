@@ -19,6 +19,8 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBusstopInfo()
+        
         setViewControllers(
             [fromStationVC],
             direction: .forward,
@@ -30,6 +32,17 @@ class PageViewController: UIPageViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension PageViewController {
+    private func configureBusstopInfo() {
+        guard let jsonPath = Bundle.main.path(forResource: "busstops", ofType: "json"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
+            return
+        }
+        let busstops = try? JSONDecoder().decode([BusstopInfo].self, from: data)
+        print(busstops)
     }
 }
 
