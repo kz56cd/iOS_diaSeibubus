@@ -16,6 +16,7 @@
 		EAE5CBC21FCBC263005C9CE8 /* FromStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBC11FCBC263005C9CE8 /* FromStationViewController.swift */; };
 		EAE5CBC41FCBC278005C9CE8 /* ToStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */; };
 		EAE5CBC81FCBC3F0005C9CE8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */; };
+		EAE5CBCA1FCBE529005C9CE8 /* busstops.json in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CBC91FCBE529005C9CE8 /* busstops.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EAE5CBC11FCBC263005C9CE8 /* FromStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromStationViewController.swift; sourceTree = "<group>"; };
 		EAE5CBC31FCBC278005C9CE8 /* ToStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewController.swift; sourceTree = "<group>"; };
 		EAE5CBC71FCBC3F0005C9CE8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		EAE5CBC91FCBE529005C9CE8 /* busstops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = busstops.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		EAE5CB871FCBBDFA005C9CE8 = {
 			isa = PBXGroup;
 			children = (
+				EAE5CBC91FCBE529005C9CE8 /* busstops.json */,
 				EAE5CB921FCBBDFA005C9CE8 /* DiaSeibubus */,
 				EAE5CBA71FCBBDFA005C9CE8 /* DiaSeibubusTests */,
 				EAE5CBB21FCBBDFA005C9CE8 /* DiaSeibubusUITests */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE5CBCA1FCBE529005C9CE8 /* busstops.json in Resources */,
 				EAE5CB9E1FCBBDFA005C9CE8 /* LaunchScreen.storyboard in Resources */,
 				EAE5CB9B1FCBBDFA005C9CE8 /* Assets.xcassets in Resources */,
 				EAE5CB991FCBBDFA005C9CE8 /* Main.storyboard in Resources */,

@@ -2,6 +2,11 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+.DS_Store
+
+## Concealed app prefarence file
+busstops.json
+
 ## Build generated
 build/
 DerivedData/
