@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
@@ -27,6 +28,12 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
         configureWebView()
     }
 
+    // MARK: action
+
+    @IBAction func researchButtonTapped(_ sender: UIButton) {
+        loadWebView()
+    }
+
     // MARK: private
 
     private func configureWebView() {
@@ -43,11 +50,12 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             let url = URL(string: urlString) else {
                 return
         }
-
+        SVProgressHUD.show()
         webView.load(URLRequest(url: url))
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("😎 loaded: ToStation dia.")
+        SVProgressHUD.dismiss()
+        SVProgressHUD.showSuccess(withStatus: "loaded.")
     }
 }

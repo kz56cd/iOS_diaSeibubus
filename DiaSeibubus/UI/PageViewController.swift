@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PageViewController: UIPageViewController {
 
@@ -25,6 +26,7 @@ class PageViewController: UIPageViewController {
         super.viewDidLoad()
         infos = BusstopInfoProvider().infos
         dataSource = self
+        configureHUD()
         configureChildViewControllers()
     }
 
@@ -34,6 +36,11 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController {
+    private func configureHUD() {
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+        SVProgressHUD.setBackgroundColor(UIColor.black)
+        SVProgressHUD.setForegroundColor(UIColor.white)
+    }
     private func configureChildViewControllers() {
         guard let fromStationVC = fromStationVC else {
             return
@@ -65,9 +72,9 @@ extension PageViewController: UIPageViewControllerDataSource {
         viewControllerBefore viewController: UIViewController
         ) -> UIViewController? {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
-            return toStationVC ?? nil
-        } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
             return nil
+        } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
+            return fromStationVC ?? nil
         }
         return nil
     }
