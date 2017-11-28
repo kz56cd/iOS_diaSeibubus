@@ -24,9 +24,9 @@ class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
         infos = BusstopInfoProvider().infos
         dataSource = self
+        configureHUD()
         configureChildViewControllers()
     }
 
@@ -36,6 +36,11 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController {
+    private func configureHUD() {
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+        SVProgressHUD.setBackgroundColor(UIColor.black)
+        SVProgressHUD.setForegroundColor(UIColor.white)
+    }
     private func configureChildViewControllers() {
         guard let fromStationVC = fromStationVC else {
             return

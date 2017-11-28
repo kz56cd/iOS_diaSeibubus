@@ -10,6 +10,7 @@
 		EACDF7C81FCD05BE00BB079F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDF7C71FCD05BE00BB079F /* Util.swift */; };
 		EACDF7CC1FCD1F8300BB079F /* BusstopInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDF7CB1FCD1F8300BB079F /* BusstopInfoProvider.swift */; };
 		EACDF7D21FCD2F9800BB079F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACDF7D11FCD2F9800BB079F /* SVProgressHUD.framework */; };
+		EACDF7D41FCD3BAB00BB079F /* DateFormatter+Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDF7D31FCD3BAB00BB079F /* DateFormatter+Formats.swift */; };
 		EAE5CB941FCBBDFA005C9CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */; };
 		EAE5CB991FCBBDFA005C9CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CB971FCBBDFA005C9CE8 /* Main.storyboard */; };
 		EAE5CB9B1FCBBDFA005C9CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CB9A1FCBBDFA005C9CE8 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		EACDF7CB1FCD1F8300BB079F /* BusstopInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusstopInfoProvider.swift; sourceTree = "<group>"; };
 		EACDF7CE1FCD2B9700BB079F /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		EACDF7D11FCD2F9800BB079F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		EACDF7D31FCD3BAB00BB079F /* DateFormatter+Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formats.swift"; sourceTree = "<group>"; };
 		EAE5CB901FCBBDFA005C9CE8 /* DiaSeibubus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaSeibubus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE5CB981FCBBDFA005C9CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				EACDF7CA1FCD1F5700BB079F /* Entitiy */,
 				EACDF7C71FCD05BE00BB079F /* Util.swift */,
 				EACDF7CB1FCD1F8300BB079F /* BusstopInfoProvider.swift */,
+				EACDF7D31FCD3BAB00BB079F /* DateFormatter+Formats.swift */,
 			);
 			path = Compornents;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				EAE5CBC81FCBC3F0005C9CE8 /* PageViewController.swift in Sources */,
 				EAE5CBC21FCBC263005C9CE8 /* FromStationViewController.swift in Sources */,
 				EAE5CB941FCBBDFA005C9CE8 /* AppDelegate.swift in Sources */,
+				EACDF7D41FCD3BAB00BB079F /* DateFormatter+Formats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +550,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DiaSeibubus/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kz56cd.DiaSeibubus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,6 +570,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DiaSeibubus/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kz56cd.DiaSeibubus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

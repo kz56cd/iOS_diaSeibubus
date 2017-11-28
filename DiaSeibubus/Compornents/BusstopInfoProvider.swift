@@ -25,15 +25,17 @@ class BusstopInfoProvider {
             let endBusstopInfo = endInfo else {
                 return nil
         }
+        let separatedDate = Util().separatedDate
+
         var str = "http://transfer.navitime.biz/seibubus-dia/smart/transfer/TransferSearch"
-        str += "?minute=56"
+        str += "?minute=\(separatedDate.minute)"
         str += "&startName=\(Util().urlEncode(by: startBusstopInfo.name) ?? "")"
         str += "&sort=2"
         str += "&wspeed=standard"
         str += "&basis=1"
         str += "&start=\(startBusstopInfo.identifier)"
         str += "&method=2"
-        str += "&hour=11"
+        str += "&hour=\(separatedDate.hour)"
         str += "&day=20171127"
         str += "&goalName=\(Util().urlEncode(by: endBusstopInfo.name) ?? "")"
         str += "&goal=\(endBusstopInfo.identifier)"
