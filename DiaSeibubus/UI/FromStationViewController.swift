@@ -13,29 +13,18 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
 
     @IBOutlet weak var webView: WKWebView!
 
-    var startBusstopInfo: BusstopInfo? {
-        guard let parent = parent as? PageViewController,
-            let infos = parent.infos else {
-                return nil
-        }
-        return infos.filter { $0.isStationBusTarminal == true }.first
-    }
-
-    var endBusstopInfo: BusstopInfo? {
-        guard let parent = parent as? PageViewController,
-            let infos = parent.infos else {
-                return nil
-        }
-        return infos.filter { $0.isStationBusTarminal == false }.first
-    }
+    let startBusstopInfo: BusstopInfo? = BusstopInfoProvider()
+        .infos?
+        .filter { $0.isStationBusTarminal == true }
+        .first
+    let endBusstopInfo: BusstopInfo? = BusstopInfoProvider()
+        .infos?
+        .filter { $0.isStationBusTarminal == false }
+        .first
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureWebView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     // MARK: private
@@ -47,28 +36,10 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
     }
 
     private func loadWebView() {
-
-        func configureUrlString() -> String? {
-            guard let startBusstopInfo = startBusstopInfo,
-                let endBusstopInfo = endBusstopInfo else {
-                    return nil
-            }
-            var str = "http://transfer.navitime.biz/seibubus-dia/smart/transfer/TransferSearch"
-            str += "?minute=56"
-            str += "&startName=\(Util().urlEncode(by: startBusstopInfo.name) ?? "")"
-            str += "&sort=2"
-            str += "&wspeed=standard"
-            str += "&basis=1"
-            str += "&start=\(startBusstopInfo.identifier)"
-            str += "&method=2"
-            str += "&hour=11"
-            str += "&day=20171127"
-            str += "&goalName=\(Util().urlEncode(by: endBusstopInfo.name) ?? "")"
-            str += "&goal=\(endBusstopInfo.identifier)"
-            return str
-        }
-
-        guard let urlString = configureUrlString(),
+        guard let urlString = BusstopInfoProvider().configureRequestUrlString(
+            with: startBusstopInfo,
+            endInfo: endBusstopInfo
+            ),
             let url = URL(string: urlString) else {
             return
         }

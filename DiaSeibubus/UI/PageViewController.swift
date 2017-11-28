@@ -23,7 +23,7 @@ class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        infos = prepareBusstopInfo()
+        infos = BusstopInfoProvider().infos
         dataSource = self
         configureChildViewControllers()
     }
@@ -34,14 +34,6 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController {
-    private func prepareBusstopInfo() -> [BusstopInfo]? {
-        guard let jsonPath = Bundle.main.path(forResource: "busstops", ofType: "json"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
-            return nil
-        }
-        return try? JSONDecoder().decode([BusstopInfo].self, from: data)
-    }
-
     private func configureChildViewControllers() {
         guard let fromStationVC = fromStationVC else {
             return
