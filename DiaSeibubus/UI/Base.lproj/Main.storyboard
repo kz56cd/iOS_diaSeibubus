@@ -43,10 +43,7 @@
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0K-sV-xNu">
-                                        <rect key="frame" x="237" y="0.0" width="130" height="66"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="I1p-dt-IgI"/>
-                                        </constraints>
+                                        <rect key="frame" x="252" y="0.0" width="107" height="66"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Research dia">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,7 +58,8 @@
                                     <constraint firstAttribute="height" constant="66" id="CfU-oB-F3Z"/>
                                     <constraint firstAttribute="bottom" secondItem="t0K-sV-xNu" secondAttribute="bottom" id="DfQ-u9-rpM"/>
                                     <constraint firstItem="t0K-sV-xNu" firstAttribute="top" secondItem="MRG-ye-ABB" secondAttribute="top" id="WDP-jB-rlO"/>
-                                    <constraint firstAttribute="trailing" secondItem="t0K-sV-xNu" secondAttribute="trailing" constant="8" id="tKS-WV-quT"/>
+                                    <constraint firstItem="t0K-sV-xNu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MRG-ye-ABB" secondAttribute="leading" constant="20" symbolic="YES" id="fzY-M8-awq"/>
+                                    <constraint firstAttribute="trailing" secondItem="t0K-sV-xNu" secondAttribute="trailing" constant="16" id="tKS-WV-quT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -105,10 +103,7 @@
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qne-Cn-zRP">
-                                        <rect key="frame" x="237" y="0.0" width="130" height="66"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="Jcq-dH-YZi"/>
-                                        </constraints>
+                                        <rect key="frame" x="252" y="0.0" width="107" height="66"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Research dia">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,7 +116,8 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59845890410958902" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="0Ph-Hx-cp3"/>
-                                    <constraint firstAttribute="trailing" secondItem="qne-Cn-zRP" secondAttribute="trailing" constant="8" id="Ho3-7Y-Ucn"/>
+                                    <constraint firstAttribute="trailing" secondItem="qne-Cn-zRP" secondAttribute="trailing" constant="16" id="Ho3-7Y-Ucn"/>
+                                    <constraint firstItem="qne-Cn-zRP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G4Q-Zt-gty" secondAttribute="leading" constant="20" symbolic="YES" id="LaN-XJ-h3A"/>
                                     <constraint firstAttribute="bottom" secondItem="qne-Cn-zRP" secondAttribute="bottom" id="YOi-gk-rWp"/>
                                     <constraint firstItem="qne-Cn-zRP" firstAttribute="top" secondItem="G4Q-Zt-gty" secondAttribute="top" id="yd8-fk-j0k"/>
                                 </constraints>
