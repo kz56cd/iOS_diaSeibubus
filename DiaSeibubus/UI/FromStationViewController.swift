@@ -13,6 +13,22 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
     
     @IBOutlet weak var webView: WKWebView!
     
+    var startBusstopInfo: BusstopInfo? {
+        guard let parent = parent as? PageViewController,
+            let infos = parent.infos else {
+                return nil
+        }
+        return infos.filter { $0.isStationBusTarminal == true }.first
+    }
+    
+    var endBusstopInfo: BusstopInfo? {
+        guard let parent = parent as? PageViewController,
+            let infos = parent.infos else {
+                return nil
+        }
+        return infos.filter { $0.isStationBusTarminal == false }.first
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureWebView()
@@ -31,13 +47,34 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
     }
 
     private func loadWebView() {
-        let urlString = "https://qiita.com/"
-        if let url = URL(string: urlString) {
-            webView.load(URLRequest(url: url))
+        
+        func configureUrlString() -> String? {
+            guard let startBusstopInfo = startBusstopInfo,
+                let endBusstopInfo = endBusstopInfo else {
+                    return nil
+            }
+            var str = "http://transfer.navitime.biz/seibubus-dia/smart/transfer/TransferSearch"
+            str += "?minute=56"
+            str += "&startName=\(Util().urlEncode(by: startBusstopInfo.name) ?? "")"
+            str += "&sort=2"
+            str += "&wspeed=standard"
+            str += "&basis=1"
+            str += "&start=\(startBusstopInfo.identifier)"
+            str += "&method=2"
+            str += "&hour=11"
+            str += "&day=20171127"
+            str += "&goalName=\(Util().urlEncode(by: endBusstopInfo.name) ?? "")"
+            str += "&goal=\(endBusstopInfo.identifier)"
+            return str
         }
+        
+        guard let urlString = configureUrlString(),
+            let url = URL(string: urlString) else {
+            return
+        }
+        webView.load(URLRequest(url: url))
     }
 
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("😎 loaded: FromStation dia.")
     }

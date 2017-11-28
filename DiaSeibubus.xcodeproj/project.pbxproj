@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EACDF7C81FCD05BE00BB079F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDF7C71FCD05BE00BB079F /* Util.swift */; };
 		EAE5CB941FCBBDFA005C9CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */; };
 		EAE5CB991FCBBDFA005C9CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CB971FCBBDFA005C9CE8 /* Main.storyboard */; };
 		EAE5CB9B1FCBBDFA005C9CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE5CB9A1FCBBDFA005C9CE8 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EACDF7C71FCD05BE00BB079F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		EAE5CB901FCBBDFA005C9CE8 /* DiaSeibubus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaSeibubus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE5CB931FCBBDFA005C9CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE5CB981FCBBDFA005C9CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				EAE5CBD91FCC259A005C9CE8 /* BusstopInfo.swift */,
+				EACDF7C71FCD05BE00BB079F /* Util.swift */,
 			);
 			path = Compornants;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE5CBC41FCBC278005C9CE8 /* ToStationViewController.swift in Sources */,
+				EACDF7C81FCD05BE00BB079F /* Util.swift in Sources */,
 				EAE5CBDA1FCC259A005C9CE8 /* BusstopInfo.swift in Sources */,
 				EAE5CBC81FCBC3F0005C9CE8 /* PageViewController.swift in Sources */,
 				EAE5CBC21FCBC263005C9CE8 /* FromStationViewController.swift in Sources */,

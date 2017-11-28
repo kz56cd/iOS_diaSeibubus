@@ -48,14 +48,14 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     
     private func loadWebView() {
         
-        func configureUrlString() -> String {
+        func configureUrlString() -> String? {
             guard let startBusstopInfo = startBusstopInfo,
                 let endBusstopInfo = endBusstopInfo else {
                     return ""
             }
             var str = "http://transfer.navitime.biz/seibubus-dia/smart/transfer/TransferSearch"
             str += "?minute=56"
-            str += "&startName=%E5%A4%A7%E5%AE%AE%E9%A7%85%E8%A5%BF%E5%8F%A3"
+            str += "&startName=\(Util().urlEncode(by: startBusstopInfo.name) ?? "")"
             str += "&sort=2"
             str += "&wspeed=standard"
             str += "&basis=1"
@@ -63,17 +63,17 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             str += "&method=2"
             str += "&hour=11"
             str += "&day=20171127"
-            str += "&goalName=%E5%A4%A7%E5%B9%B3%E5%85%AC%E5%9C%92%E5%85%A5%E5%8F%A3"
+            str += "&goalName=\(Util().urlEncode(by: endBusstopInfo.name) ?? "")"
             str += "&goal=\(endBusstopInfo.identifier)"
             return str
         }
         
-        let urlString = configureUrlString()
-        if let url = URL(string: urlString) {
-            webView.load(URLRequest(url: url))
+        guard let urlString = configureUrlString(),
+            let url = URL(string: urlString) else {
+                return
         }
+        webView.load(URLRequest(url: url))
     }
-    
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("😎 loaded: ToStation dia.")
