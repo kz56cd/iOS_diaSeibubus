@@ -17,9 +17,11 @@ class PageViewController: UIPageViewController {
         return storyboard!.instantiateViewController(withIdentifier: "ToStationViewController") as! ToStationViewController
     }
     
+    var infos: [BusstopInfo]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureBusstopInfo()
+        infos = configureBusstopInfo()
         
         setViewControllers(
             [fromStationVC],
@@ -36,13 +38,12 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController {
-    private func configureBusstopInfo() {
+    private func configureBusstopInfo() -> [BusstopInfo]? {
         guard let jsonPath = Bundle.main.path(forResource: "busstops", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
-            return
+            return nil
         }
-        let busstops = try? JSONDecoder().decode([BusstopInfo].self, from: data)
-        print(busstops)
+        return try? JSONDecoder().decode([BusstopInfo].self, from: data)
     }
 }
 

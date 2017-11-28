@@ -39,6 +39,6 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
 
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("😎")
+        print("😎 loaded: FromStation dia.")
     }
 }
