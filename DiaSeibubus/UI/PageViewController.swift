@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PageViewController: UIPageViewController {
 
@@ -65,9 +66,9 @@ extension PageViewController: UIPageViewControllerDataSource {
         viewControllerBefore viewController: UIViewController
         ) -> UIViewController? {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
-            return toStationVC ?? nil
-        } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
             return nil
+        } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
+            return fromStationVC ?? nil
         }
         return nil
     }

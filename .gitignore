@@ -7,6 +7,9 @@
 ## Concealed app prefarence file
 busstops.json
 
+## Carthage
+Carthage/Build
+
 ## Build generated
 build/
 DerivedData/

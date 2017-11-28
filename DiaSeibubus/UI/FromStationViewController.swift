@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
@@ -43,10 +44,12 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
             let url = URL(string: urlString) else {
             return
         }
+        SVProgressHUD.show()
         webView.load(URLRequest(url: url))
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("😎 loaded: FromStation dia.")
+        SVProgressHUD.dismiss()
+        SVProgressHUD.showSuccess(withStatus: "loaded.")
     }
 }
