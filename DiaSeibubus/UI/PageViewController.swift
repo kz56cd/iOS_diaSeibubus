@@ -41,6 +41,7 @@ extension PageViewController {
         SVProgressHUD.setBackgroundColor(UIColor.black)
         SVProgressHUD.setForegroundColor(UIColor.white)
     }
+
     private func configureChildViewControllers() {
         guard let fromStationVC = fromStationVC else {
             return
