@@ -28,6 +28,12 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
         configureWebView()
     }
 
+    // MARK: action
+
+    @IBAction func researchButtonTapped(_ sender: UIButton) {
+        loadWebView()
+    }
+
     // MARK: private
 
     private func configureWebView() {
