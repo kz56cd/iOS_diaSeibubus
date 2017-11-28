@@ -47,6 +47,11 @@ class BusstopInfoProvider {
     private func prepareBusstopInfo() -> [BusstopInfo]? {
         guard let jsonPath = Bundle.main.path(forResource: "busstops", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
+                let error = """
+                    [Error] : Could not find bussstop information. Check README
+                    https://github.com/kz56cd/iOS_dia_seibubus
+                    """
+                print(error)
                 return nil
         }
         return try? JSONDecoder().decode([BusstopInfo].self, from: data)
