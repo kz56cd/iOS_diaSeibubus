@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EAE5CBD61FCBEA30005C9CE8 /* Application */,
-				EAE5CBD81FCC2576005C9CE8 /* Compornants */,
+				EAE5CBD81FCC2576005C9CE8 /* Compornents */,
 				EAE5CBD51FCBEA26005C9CE8 /* UI */,
 				EAE5CBD71FCBEA30005C9CE8 /* Constants */,
 			);
@@ -163,13 +163,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		EAE5CBD81FCC2576005C9CE8 /* Compornants */ = {
+		EAE5CBD81FCC2576005C9CE8 /* Compornents */ = {
 			isa = PBXGroup;
 			children = (
 				EAE5CBD91FCC259A005C9CE8 /* BusstopInfo.swift */,
 				EACDF7C71FCD05BE00BB079F /* Util.swift */,
 			);
-			path = Compornants;
+			path = Compornents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
