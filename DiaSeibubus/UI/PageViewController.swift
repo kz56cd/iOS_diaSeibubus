@@ -10,26 +10,22 @@ import UIKit
 
 class PageViewController: UIPageViewController {
 
-    var fromStationVC: FromStationViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "FromStationViewController") as! FromStationViewController
+    var fromStationVC: FromStationViewController? {
+        return storyboard?.instantiateViewController(withIdentifier: "FromStationViewController")
+            as? FromStationViewController
     }
-    var toStationVC: ToStationViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "ToStationViewController") as! ToStationViewController
+    var toStationVC: ToStationViewController? {
+        return storyboard?.instantiateViewController(withIdentifier: "ToStationViewController")
+            as? ToStationViewController
     }
 
     var infos: [BusstopInfo]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        infos = configureBusstopInfo()
-
-        setViewControllers(
-            [fromStationVC],
-            direction: .forward,
-            animated: true,
-            completion: nil
-        )
+        infos = prepareBusstopInfo()
         dataSource = self
+        configureChildViewControllers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,28 +34,46 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController {
-    private func configureBusstopInfo() -> [BusstopInfo]? {
+    private func prepareBusstopInfo() -> [BusstopInfo]? {
         guard let jsonPath = Bundle.main.path(forResource: "busstops", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
             return nil
         }
         return try? JSONDecoder().decode([BusstopInfo].self, from: data)
     }
+
+    private func configureChildViewControllers() {
+        guard let fromStationVC = fromStationVC else {
+            return
+        }
+        setViewControllers(
+            [fromStationVC],
+            direction: .forward,
+            animated: true,
+            completion: nil
+        )
+    }
 }
 
 extension PageViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+        ) -> UIViewController? {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
-            return toStationVC
+            return toStationVC ?? nil
         } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
             return nil
         }
         return nil
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+        ) -> UIViewController? {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
-            return toStationVC
+            return toStationVC ?? nil
         } else if viewController.isKind(of: ToStationViewController.classForCoder()) {
             return nil
         }
