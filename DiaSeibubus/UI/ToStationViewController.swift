@@ -10,17 +10,17 @@ import UIKit
 import WebKit
 
 class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
-    
+
     @IBOutlet weak var webView: WKWebView!
-    
+
     var startBusstopInfo: BusstopInfo? {
         guard let parent = parent as? PageViewController,
-        let infos = parent.infos else {
+            let infos = parent.infos else {
             return nil
         }
         return infos.filter { $0.isStationBusTarminal == false }.first
     }
-    
+
     var endBusstopInfo: BusstopInfo? {
         guard let parent = parent as? PageViewController,
             let infos = parent.infos else {
@@ -28,26 +28,26 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
         }
         return infos.filter { $0.isStationBusTarminal == true }.first
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureWebView()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: private
-    
+
     private func configureWebView() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         loadWebView()
     }
-    
+
     private func loadWebView() {
-        
+
         func configureUrlString() -> String? {
             guard let startBusstopInfo = startBusstopInfo,
                 let endBusstopInfo = endBusstopInfo else {
@@ -67,14 +67,14 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             str += "&goal=\(endBusstopInfo.identifier)"
             return str
         }
-        
+
         guard let urlString = configureUrlString(),
             let url = URL(string: urlString) else {
                 return
         }
         webView.load(URLRequest(url: url))
     }
-    
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("😎 loaded: ToStation dia.")
     }

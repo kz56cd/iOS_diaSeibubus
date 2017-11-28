@@ -10,9 +10,9 @@ import UIKit
 import WebKit
 
 class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
-    
+
     @IBOutlet weak var webView: WKWebView!
-    
+
     var startBusstopInfo: BusstopInfo? {
         guard let parent = parent as? PageViewController,
             let infos = parent.infos else {
@@ -20,7 +20,7 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
         }
         return infos.filter { $0.isStationBusTarminal == true }.first
     }
-    
+
     var endBusstopInfo: BusstopInfo? {
         guard let parent = parent as? PageViewController,
             let infos = parent.infos else {
@@ -28,7 +28,7 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
         }
         return infos.filter { $0.isStationBusTarminal == false }.first
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureWebView()
@@ -37,9 +37,9 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: private
-    
+
     private func configureWebView() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
@@ -47,7 +47,7 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
     }
 
     private func loadWebView() {
-        
+
         func configureUrlString() -> String? {
             guard let startBusstopInfo = startBusstopInfo,
                 let endBusstopInfo = endBusstopInfo else {
@@ -67,7 +67,7 @@ class FromStationViewController: UIViewController, WKUIDelegate, WKNavigationDel
             str += "&goal=\(endBusstopInfo.identifier)"
             return str
         }
-        
+
         guard let urlString = configureUrlString(),
             let url = URL(string: urlString) else {
             return

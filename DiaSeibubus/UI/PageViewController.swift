@@ -16,13 +16,13 @@ class PageViewController: UIPageViewController {
     var toStationVC: ToStationViewController {
         return storyboard!.instantiateViewController(withIdentifier: "ToStationViewController") as! ToStationViewController
     }
-    
+
     var infos: [BusstopInfo]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         infos = configureBusstopInfo()
-        
+
         setViewControllers(
             [fromStationVC],
             direction: .forward,
@@ -56,7 +56,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         }
         return nil
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if viewController.isKind(of: FromStationViewController.classForCoder()) {
             return toStationVC
