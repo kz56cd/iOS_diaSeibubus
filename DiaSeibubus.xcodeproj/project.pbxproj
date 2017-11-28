@@ -208,7 +208,7 @@
 				EAE5CB8D1FCBBDFA005C9CE8 /* Frameworks */,
 				EAE5CB8E1FCBBDFA005C9CE8 /* Resources */,
 				EACDF7C91FCD190B00BB079F /* Swiftlint */,
-				EACDF7D01FCD2BA300BB079F /* Run Script */,
+				EACDF7D01FCD2BA300BB079F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -344,7 +344,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		EACDF7D01FCD2BA300BB079F /* Run Script */ = {
+		EACDF7D01FCD2BA300BB079F /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -352,7 +352,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
-			name = "Run Script";
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

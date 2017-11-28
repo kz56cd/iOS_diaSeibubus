@@ -24,6 +24,7 @@ class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
         infos = BusstopInfoProvider().infos
         dataSource = self
         configureChildViewControllers()
