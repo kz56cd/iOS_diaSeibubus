@@ -2,8 +2,8 @@
 //  ToStationViewController.swift
 //  DiaSeibubus
 //
-//  Created by 佐野正和 on 2017/11/27.
-//  Copyright © 2017年 佐野正和. All rights reserved.
+//  Created by msano on 2017/11/27.
+//  Copyright © 2017年 msano. All rights reserved.
 //
 
 import UIKit
@@ -13,6 +13,7 @@ import SVProgressHUD
 class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var researchView: ResearchView!
 
     let startBusstopInfo: BusstopInfo? = BusstopInfoProvider()
         .infos?
@@ -25,13 +26,8 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        researchView.delegate = self
         configureWebView()
-    }
-
-    // MARK: action
-
-    @IBAction func researchButtonTapped(_ sender: UIButton) {
-        loadWebView()
     }
 
     // MARK: private
@@ -39,13 +35,14 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     private func configureWebView() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        loadWebView()
+        loadWebView(with: 0)
     }
 
-    private func loadWebView() {
+    private func loadWebView(with minute: Int) {
         guard let urlString = BusstopInfoProvider().configureRequestUrlString(
             with: startBusstopInfo,
-            endInfo: endBusstopInfo
+            endInfo: endBusstopInfo,
+            addMinute: minute
             ),
             let url = URL(string: urlString) else {
                 return
@@ -57,5 +54,11 @@ class ToStationViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         SVProgressHUD.dismiss()
         SVProgressHUD.showSuccess(withStatus: "loaded.")
+    }
+}
+
+extension ToStationViewController: ResearchViewDelegate {
+    func tappedResearch(with minute: Int) {
+        loadWebView(with: minute)
     }
 }

@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Page View Controller-->
         <scene sceneID="uqA-DN-kII">
@@ -39,43 +34,27 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-ye-ABB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxo-uC-IdV" customClass="ResearchView" customModule="DiaSeibubus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0K-sV-xNu">
-                                        <rect key="frame" x="252" y="0.0" width="107" height="66"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Research dia">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="researchButtonTapped:" destination="BTY-X0-BPH" eventType="touchUpInside" id="Uhe-Np-I2o"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59661279965753422" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="CfU-oB-F3Z"/>
-                                    <constraint firstAttribute="bottom" secondItem="t0K-sV-xNu" secondAttribute="bottom" id="DfQ-u9-rpM"/>
-                                    <constraint firstItem="t0K-sV-xNu" firstAttribute="top" secondItem="MRG-ye-ABB" secondAttribute="top" id="WDP-jB-rlO"/>
-                                    <constraint firstItem="t0K-sV-xNu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MRG-ye-ABB" secondAttribute="leading" constant="20" symbolic="YES" id="fzY-M8-awq"/>
-                                    <constraint firstAttribute="trailing" secondItem="t0K-sV-xNu" secondAttribute="trailing" constant="16" id="tKS-WV-quT"/>
+                                    <constraint firstAttribute="height" constant="66" id="6EQ-xi-EEK"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99574802159999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eG2-fR-hCL" firstAttribute="trailing" secondItem="vlN-fJ-2bn" secondAttribute="trailing" id="0ME-YU-Dte"/>
-                            <constraint firstItem="MRG-ye-ABB" firstAttribute="leading" secondItem="vlN-fJ-2bn" secondAttribute="leading" id="9BB-XR-vcY"/>
                             <constraint firstItem="eG2-fR-hCL" firstAttribute="top" secondItem="AXI-SA-uwa" secondAttribute="top" id="AgC-vi-LG2"/>
                             <constraint firstItem="eG2-fR-hCL" firstAttribute="bottom" secondItem="vlN-fJ-2bn" secondAttribute="bottom" id="Bux-wv-9eO"/>
-                            <constraint firstItem="MRG-ye-ABB" firstAttribute="bottom" secondItem="vlN-fJ-2bn" secondAttribute="bottom" id="HOt-3t-bzh"/>
+                            <constraint firstItem="vlN-fJ-2bn" firstAttribute="bottom" secondItem="pxo-uC-IdV" secondAttribute="bottom" id="J2o-XZ-7Nz"/>
                             <constraint firstItem="eG2-fR-hCL" firstAttribute="leading" secondItem="vlN-fJ-2bn" secondAttribute="leading" id="WEY-hg-Sf1"/>
-                            <constraint firstItem="MRG-ye-ABB" firstAttribute="trailing" secondItem="vlN-fJ-2bn" secondAttribute="trailing" id="xpp-4O-uqp"/>
+                            <constraint firstItem="pxo-uC-IdV" firstAttribute="leading" secondItem="vlN-fJ-2bn" secondAttribute="leading" id="iMc-Nb-o17"/>
+                            <constraint firstItem="pxo-uC-IdV" firstAttribute="trailing" secondItem="vlN-fJ-2bn" secondAttribute="trailing" id="ies-dM-3yi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vlN-fJ-2bn"/>
                     </view>
                     <connections>
+                        <outlet property="researchView" destination="pxo-uC-IdV" id="Yoh-Ch-dV1"/>
                         <outlet property="webView" destination="eG2-fR-hCL" id="xGP-dE-hgf"/>
                     </connections>
                 </viewController>
@@ -99,49 +78,47 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Q-Zt-gty">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bt-7w-ZPP" customClass="ResearchView" customModule="DiaSeibubus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qne-Cn-zRP">
-                                        <rect key="frame" x="252" y="0.0" width="107" height="66"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Research dia">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="researchButtonTapped:" destination="JgP-Kd-1ri" eventType="touchUpInside" id="YdM-iz-KyN"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59845890410958902" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="0Ph-Hx-cp3"/>
-                                    <constraint firstAttribute="trailing" secondItem="qne-Cn-zRP" secondAttribute="trailing" constant="16" id="Ho3-7Y-Ucn"/>
-                                    <constraint firstItem="qne-Cn-zRP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G4Q-Zt-gty" secondAttribute="leading" constant="20" symbolic="YES" id="LaN-XJ-h3A"/>
-                                    <constraint firstAttribute="bottom" secondItem="qne-Cn-zRP" secondAttribute="bottom" id="YOi-gk-rWp"/>
-                                    <constraint firstItem="qne-Cn-zRP" firstAttribute="top" secondItem="G4Q-Zt-gty" secondAttribute="top" id="yd8-fk-j0k"/>
+                                    <constraint firstAttribute="height" constant="66" id="4I3-Hw-KmG"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tjH-4s-Pid" firstAttribute="top" secondItem="UqH-o6-A0l" secondAttribute="top" id="0rO-Vd-5Ab"/>
+                            <constraint firstItem="0Bt-7w-ZPP" firstAttribute="trailing" secondItem="974-KR-35H" secondAttribute="trailing" id="1Xh-eN-yNv"/>
                             <constraint firstItem="974-KR-35H" firstAttribute="bottom" secondItem="tjH-4s-Pid" secondAttribute="bottom" id="37a-li-FDp"/>
                             <constraint firstItem="tjH-4s-Pid" firstAttribute="leading" secondItem="974-KR-35H" secondAttribute="leading" id="CYk-7s-Raj"/>
-                            <constraint firstItem="G4Q-Zt-gty" firstAttribute="bottom" secondItem="974-KR-35H" secondAttribute="bottom" id="KGR-nG-pWR"/>
-                            <constraint firstItem="G4Q-Zt-gty" firstAttribute="leading" secondItem="974-KR-35H" secondAttribute="leading" id="Y07-qn-SQJ"/>
-                            <constraint firstItem="G4Q-Zt-gty" firstAttribute="trailing" secondItem="974-KR-35H" secondAttribute="trailing" id="icZ-aq-oCK"/>
                             <constraint firstItem="974-KR-35H" firstAttribute="trailing" secondItem="tjH-4s-Pid" secondAttribute="trailing" id="jyN-GC-ing"/>
+                            <constraint firstItem="974-KR-35H" firstAttribute="bottom" secondItem="0Bt-7w-ZPP" secondAttribute="bottom" id="rHI-LW-J4S"/>
+                            <constraint firstItem="0Bt-7w-ZPP" firstAttribute="leading" secondItem="974-KR-35H" secondAttribute="leading" id="vyo-Ca-WHV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="974-KR-35H"/>
                     </view>
                     <connections>
+                        <outlet property="researchView" destination="0Bt-7w-ZPP" id="mZJ-Vl-aFN"/>
                         <outlet property="webView" destination="tjH-4s-Pid" id="MQH-DL-60s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOm-FD-285" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356" y="895.50224887556226"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DEz-tQ-Gtd">
+            <objects>
+                <viewController id="RkU-0r-5Cr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A7v-Ua-3yY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XYB-ow-YtO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31u-ek-0tJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

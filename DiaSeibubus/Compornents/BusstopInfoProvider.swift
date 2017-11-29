@@ -2,8 +2,8 @@
 //  BusstopInfoProvider.swift
 //  DiaSeibubus
 //
-//  Created by 佐野正和 on 2017/11/28.
-//  Copyright © 2017年 佐野正和. All rights reserved.
+//  Created by msano on 2017/11/28.
+//  Copyright © 2017年 msano. All rights reserved.
 //
 
 import Foundation
@@ -15,18 +15,18 @@ class BusstopInfoProvider {
     init() {
         infos = prepareBusstopInfo()
     }
-
+    
     func configureRequestUrlString(
         with startInfo: BusstopInfo?,
-        endInfo: BusstopInfo?
+        endInfo: BusstopInfo?,
+        addMinute: Int
         ) -> String? {
 
         guard let startBusstopInfo = startInfo,
             let endBusstopInfo = endInfo else {
                 return nil
         }
-        let separatedDate = Util().separatedDate
-
+        let separatedDate = Util().getSeparatedDate(with: addMinute)
         var str = "http://transfer.navitime.biz/seibubus-dia/smart/transfer/TransferSearch"
         str += "?minute=\(separatedDate.minute)"
         str += "&startName=\(Util().urlEncode(by: startBusstopInfo.name) ?? "")"
@@ -36,7 +36,7 @@ class BusstopInfoProvider {
         str += "&start=\(startBusstopInfo.identifier)"
         str += "&method=2"
         str += "&hour=\(separatedDate.hour)"
-        str += "&day=20171127"
+        str += "&day=\(separatedDate.yearAndMonthAndDay)"
         str += "&goalName=\(Util().urlEncode(by: endBusstopInfo.name) ?? "")"
         str += "&goal=\(endBusstopInfo.identifier)"
         return str
