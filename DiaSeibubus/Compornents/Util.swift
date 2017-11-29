@@ -2,8 +2,8 @@
 //  Util.swift
 //  DiaSeibubus
 //
-//  Created by 佐野正和 on 2017/11/28.
-//  Copyright © 2017年 佐野正和. All rights reserved.
+//  Created by msano on 2017/11/28.
+//  Copyright © 2017年 msano. All rights reserved.
 //
 
 import Foundation
@@ -15,8 +15,9 @@ struct SeparatedDate {
 }
 
 class Util {
-    var separatedDate: SeparatedDate {
-        let date = Date()
+    func getSeparatedDate(with minute: Int) -> SeparatedDate {
+        let date = Date(timeInterval: Double(minute * 60), since: Date())
+        print(date)
         return SeparatedDate(
             yearAndMonthAndDay: DateFormatter(format: .yearMonthDay).string(from: date),
             hour: DateFormatter(format: .hour).string(from: date),

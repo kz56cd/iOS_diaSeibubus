@@ -2,8 +2,8 @@
 //  DiaSeibubusTests.swift
 //  DiaSeibubusTests
 //
-//  Created by 佐野正和 on 2017/11/27.
-//  Copyright © 2017年 佐野正和. All rights reserved.
+//  Created by msano on 2017/11/27.
+//  Copyright © 2017年 msano. All rights reserved.
 //
 
 import XCTest
