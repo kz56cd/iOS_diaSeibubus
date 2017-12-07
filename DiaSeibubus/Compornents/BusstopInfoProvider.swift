@@ -15,7 +15,7 @@ class BusstopInfoProvider {
     init() {
         infos = prepareBusstopInfo()
     }
-    
+
     func configureRequestUrlString(
         with startInfo: BusstopInfo?,
         endInfo: BusstopInfo?,

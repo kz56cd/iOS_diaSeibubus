@@ -33,11 +33,9 @@ class ViewController: UIViewController {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        guard let _ = info[UIImagePickerControllerEditedImage] as? UIImage  else {
-            return
+        if info[UIImagePickerControllerEditedImage] != nil {
+            picker.dismiss(animated: true, completion: nil)
         }
-        // use image
-        picker.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
